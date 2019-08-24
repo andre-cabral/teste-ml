@@ -1,0 +1,30 @@
+$text-color-primary: #121212;
+$text-color-secondary: #5b5b5b;
+$text-color-tertiary: #fff;
+
+$border-color-primary: #bababa;
+$border-color-secondary: #478ce4;
+
+$background-color-primary: #f0f0f0;
+$background-color-secondary: #fff;
+$background-color-tertiary: #3c3c3c;
+
+$error-color: #f00;
+
+@import './home/home-style.scss';
+
+body{
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: $background-color-primary;
+}
+
+code{
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

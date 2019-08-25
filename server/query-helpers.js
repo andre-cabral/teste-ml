@@ -32,7 +32,7 @@ const parseResultItem = (resultItemData) => {
       amount: R.pathOr(0, ['0'], priceSplit),
       decimals: R.pathOr(0, ['1'], priceSplit)
     },
-    picture: R.pathOr('', ['thumbnail'], resultItemData),
+    picture: R.pathOr('', ['secure_thumbnail'], resultItemData),
     condition: R.pathOr('', ['condition'], resultItemData),
     free_shipping: R.pathOr(false, ['shipping', 'free_shipping'], resultItemData)
   }

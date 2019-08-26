@@ -11,6 +11,8 @@ import './index-style.scss';
 import Routes from './index-routes';
 import * as serviceWorker from './serviceWorker';
 
+import Header from './header/header-component';
+
 const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
 
 const store = compose(
@@ -19,6 +21,7 @@ const store = compose(
 
 ReactDOM.render(
   <Provider store={store}>
+    <Header />
     <Routes />
   </Provider>, document.getElementById('root'));
 

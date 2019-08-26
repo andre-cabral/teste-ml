@@ -1,0 +1,21 @@
+.query{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 500px;
+  min-width: 320px;
+  margin: 80px auto;
+
+  
+
+  &__form{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+
+  &__form{
+    
+  }
+}

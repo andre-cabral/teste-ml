@@ -1,0 +1,15 @@
+.button{
+  text-align: center;
+  height: 50px;
+  box-sizing: border-box;
+  font-size: 16px;
+  cursor: pointer;
+
+  &--query{
+    border-radius: 0 4px 4px 0;
+    background-color: $background-color-primary;
+    color: $text-color-tertiary;
+    border: none;
+    padding: 0 15px;
+  }
+}

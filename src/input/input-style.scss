@@ -1,0 +1,20 @@
+.input{
+  height: 50px;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+
+  &--light{
+    background-color: $background-color-tertiary;
+    color: $text-color-primary;
+    border-radius: 4px 0 0 4px;
+
+    &::placeholder,/* Firefox, Chrome, Opera */ 
+    &:-ms-input-placeholder,/* Internet Explorer 10-11 */ 
+    &::-ms-input-placeholder/* Microsoft Edge */ { 
+      color: $text-color-secondary;
+    }
+  }
+}

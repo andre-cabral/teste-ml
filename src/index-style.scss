@@ -1,9 +1,8 @@
 $text-color-primary: #333;
 $text-color-secondary: #999;
-$text-color-tertiary: #fff;
+$text-color-tertiary: #666;
 
-$border-color-primary: #bababa;
-$border-color-secondary: #478ce4;
+$border-color-primary: #eee;
 
 $background-color-primary: #eee;
 $background-color-secondary: #ffe600;
@@ -11,11 +10,13 @@ $background-color-tertiary: #fff;
 
 $error-color: #f00;
 
+@import './reset.scss';
 @import './button/button-style.scss';
 @import './header/header-style.scss';
 @import './home/home-style.scss';
 @import './input/input-style.scss';
 @import './query-form/query-form-style.scss';
+@import './query-results/query-results-style.scss';
 
 html{
   height: 100%;
@@ -39,6 +40,7 @@ code{
 
 #root{
   height: 100%;
+  background-color: $background-color-primary;
 }
 
 .col-1{ width: 70px; }
@@ -56,6 +58,10 @@ code{
 
 .spacing-right{
   margin-right: 18px;
+
+  &--2-col{
+    margin-right: 158px;
+  }
 }
 
 .container{
@@ -65,6 +71,7 @@ code{
   &--vertical-center{
     display: flex;
     align-items: center;
+    align-content: center;
   }
   &--flex{
     display: flex;

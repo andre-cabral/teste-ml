@@ -6,20 +6,30 @@ const parseQueryResults = (queryResultsData) => {
       name: "String",
       lastname: "String"
     },
-    categories: parseCategories(R.pathOr([], ['available_filters'], queryResultsData)),
+    categories: parseCategories(R.pathOr([], ['filters'], queryResultsData), R.pathOr([], ['available_filters'], queryResultsData)),
     items: R.pathOr([], ['results'], queryResultsData).map((item) => {
       return parseResultItem(item);
     }),
   }
 };
 
-const parseCategories = (filtersData) => {
+const parseCategories = (filtersData, availableFiltersData) => {
   const categories = filtersData.filter((filter) => {
     return R.pathOr('', ['id'], filter) === 'category';
   });
-  return R.pathOr([], ['0', 'values'], categories).map((category) => {
+  const filtersCategories = R.pathOr([], ['0', 'values'], categories).map((category) => {
     return R.pathOr('', ['name'], category);
   });
+  if(filtersCategories.length > 0){
+    return filtersCategories;
+  } else {
+    const availableFiltersCategories = availableFiltersData.filter((filter) => {
+      return R.pathOr('', ['id'], filter) === 'category';
+    });
+    return R.pathOr([], ['0', 'values'], availableFiltersCategories).map((category) => {
+      return R.pathOr('', ['name'], category);
+    });
+  }
 }
 
 const parseResultItem = (resultItemData) => {
@@ -32,7 +42,8 @@ const parseResultItem = (resultItemData) => {
       amount: R.pathOr(0, ['0'], priceSplit),
       decimals: R.pathOr(0, ['1'], priceSplit)
     },
-    picture: R.pathOr('', ['secure_thumbnail'], resultItemData),
+    city: R.pathOr('', ['address', 'city_name'], resultItemData),
+    picture: R.pathOr('', ['thumbnail'], resultItemData),
     condition: R.pathOr('', ['condition'], resultItemData),
     free_shipping: R.pathOr(false, ['shipping', 'free_shipping'], resultItemData)
   }

@@ -8,3 +8,8 @@ export const accessUrlWithQuery = (url = '/', queryValue = '') => {
     search: `?q=${encodeURI(queryValue)}`,
   });
 };
+
+export const getUrlParameter = (allParametersString, parameterToGet = '') => {
+  const query = new URLSearchParams(allParametersString);  
+  return query.get(parameterToGet);
+}

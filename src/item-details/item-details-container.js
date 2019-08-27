@@ -6,6 +6,13 @@ import ItemDetails from './item-details-component';
 
 const mapStateToProps = (state) => ({
   id: state.itemDetails.id,
+  title: state.itemDetails.title,
+  price: state.itemDetails.price,
+  picture: state.itemDetails.picture,
+  condition: state.itemDetails.condition,
+  free_shipping: state.itemDetails.free_shipping,
+  sold_quantity: state.itemDetails.sold_quantity,
+  description: state.itemDetails.description,
   categories: state.itemDetails.categories
 });
 

@@ -2,10 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 70px;
 
-  
   &__items{
+    box-sizing: border-box;
     width: 100%;
     background-color: $background-color-tertiary;
     border-radius: 4px;

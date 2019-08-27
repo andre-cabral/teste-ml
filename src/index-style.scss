@@ -66,6 +66,17 @@ code{
   }
 }
 
+.spacing-bottom{
+  margin-bottom: 18px;
+
+  &--1-col{
+    margin-bottom: 70px;
+  }
+  &--1-col-big{
+    margin-bottom: 106px;
+  }
+}
+
 .container{
   &--center{
     margin: 0 auto;

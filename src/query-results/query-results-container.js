@@ -7,7 +7,8 @@ import QueryResults from './query-results-component';
 const mapStateToProps = (state) => ({
   categories: state.queryResults.categories,
   items: state.queryResults.items,
-  error: state.queryResults.error
+  error: state.queryResults.error,
+  loading: state.queryResults.loading
 });
 
 const mapDispatchToProps = (dispatch) => 

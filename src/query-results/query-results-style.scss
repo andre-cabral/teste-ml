@@ -12,6 +12,11 @@
     padding: 0 16px;
   }
 
+  &__no-products{
+    font-size: 24px;
+    padding: 48px 32px;
+  }
+
   &__product{
     display: flex;
     box-sizing: border-box;

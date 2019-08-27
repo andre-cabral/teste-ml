@@ -8,7 +8,6 @@ export const detailsRequest = (productId) => {
       axios.get(`/api/items/${productId}`)
         .then(
           (response) => {
-            console.log(response)
             return dispatch(detailsSuccessAction({
               id: pathOr('', ['data', 'item', 'id'], response),
               title: pathOr('', ['data', 'item', 'title'], response),

@@ -12,7 +12,8 @@ const initialState = {
   sold_quantity: '',
   description: '',
   categories: [],
-  error: ''
+  error: '',
+  loading: true
 }
 
 const ItemDetailsReducer = (state = initialState, action) => {
@@ -33,12 +34,14 @@ const ItemDetailsReducer = (state = initialState, action) => {
         sold_quantity: action.payload.sold_quantity,
         description: action.payload.description,
         categories: action.payload.categories,
-        error: ''
+        error: '',
+        loading: false
       };
     case 'DETAILS_ERROR':
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
+        loading: false
       };
     default:
       return state;

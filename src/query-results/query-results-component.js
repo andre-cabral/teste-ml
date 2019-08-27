@@ -3,6 +3,7 @@ import { getUrlParameter } from '../helpers/url-helper';
 import freeShippingImage from './images/free-shipping.png';
 import { addZeroOnDecimals } from '../helpers/currency';
 import CategoriesList from '../categories-list/categories-list-component';
+import Loading from '../loading/loading-component';
 
 class QueryResults extends Component {
   componentDidMount(){
@@ -11,12 +12,15 @@ class QueryResults extends Component {
   }
 
   render() {
-    const { categories, items, error } = this.props;
+    const { categories, items, loading } = this.props;
   
     return(
       <article className="results col-10">
-        <CategoriesList categories={categories} maximum={4} />
+        
+        { !loading && <CategoriesList categories={categories} maximum={4} /> }
+        { !loading && 
         <ul className="results__items">
+          {items.length === 0 && <li className="results__no-products">No se encontraron productos</li>}
           {items.slice(0,4).map((product) => {
             const link = `/items/${product.id}`;
             return (
@@ -37,6 +41,8 @@ class QueryResults extends Component {
             );
           })}
         </ul>
+        }
+        { loading && <Loading /> }
       </article>
     );
   }

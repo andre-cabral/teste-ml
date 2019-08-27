@@ -1,7 +1,8 @@
 const initialState = {
   queryValue: '',
   categories: [],
-  items: []
+  items: [],
+  loading: true
 }
 
 const QueryResultsReducer = (state = initialState, action) => {
@@ -15,14 +16,16 @@ const QueryResultsReducer = (state = initialState, action) => {
         ...state,
         categories: action.payload.categories,
         items: action.payload.items,
-        error: ''
+        error: '',
+        loading: false
       };
     case 'QUERY_ERROR':
       return {
         ...state,
         categories: [],
         items: [],
-        error: action.payload
+        error: action.payload,
+        loading: false
       };
     default:
       return state;

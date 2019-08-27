@@ -7,9 +7,9 @@ class Header extends Component {
     return(
       <header className="header">
         <div className="col-10 container--center container--flex">
-          <div className="col-1 container--vertical-center">
+          <a className="col-1 container--vertical-center" href="/">
             <img src={logoImage} alt="Mercado Livre" />
-          </div>
+          </a>
           <QueryForm />
         </div>
       </header>

@@ -13,7 +13,8 @@ const mapStateToProps = (state) => ({
   free_shipping: state.itemDetails.free_shipping,
   sold_quantity: state.itemDetails.sold_quantity,
   description: state.itemDetails.description,
-  categories: state.itemDetails.categories
+  categories: state.itemDetails.categories,
+  loading: state.itemDetails.loading
 });
 
 const mapDispatchToProps = (dispatch) => 

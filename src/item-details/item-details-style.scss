@@ -1,0 +1,13 @@
+.details{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+
+  &__container{
+    width: 100%;
+    background-color: $background-color-tertiary;
+    border-radius: 4px;
+    padding: 0 16px;
+  }
+}

@@ -4,21 +4,7 @@
   width: 100%;
   margin: 0 auto;
 
-  &__categories{
-    display: flex;
-    padding: 16px 0;
-  }
-
-  &__category-name{
-    font-size: 14px;
-    color: $text-color-secondary;
-
-    &--last{
-      font-weight: bold;
-    }
-  }
-
-
+  
   &__items{
     width: 100%;
     background-color: $background-color-tertiary;

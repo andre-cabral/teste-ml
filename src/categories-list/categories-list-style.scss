@@ -1,0 +1,13 @@
+.categories{
+  display: flex;
+  padding: 16px 0;
+
+  &__name{
+    font-size: 14px;
+    color: $text-color-secondary;
+
+    &--last{
+      font-weight: bold;
+    }
+  }
+}

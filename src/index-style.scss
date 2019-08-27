@@ -12,9 +12,11 @@ $error-color: #f00;
 
 @import './reset.scss';
 @import './button/button-style.scss';
+@import './categories-list/categories-list-style.scss';
 @import './header/header-style.scss';
 @import './home/home-style.scss';
 @import './input/input-style.scss';
+@import './item-details/item-details-style.scss';
 @import './query-form/query-form-style.scss';
 @import './query-results/query-results-style.scss';
 

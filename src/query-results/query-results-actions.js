@@ -18,10 +18,9 @@ export const queryRequest = (queryValue) => {
   };
 };
 
-const queryRequestAction = (queryData) => {
+const queryRequestAction = () => {
   return {
-    type: 'QUERY_REQUEST',
-    payload: queryData
+    type: 'QUERY_REQUEST'
   };
 };
 

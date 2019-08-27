@@ -31,7 +31,14 @@ app.get('/api/items/:id', (req, res) => {
     .then( (response) => {
       axios.get(`https://api.mercadolibre.com/items/${id}/description`)
         .then( (responseDescription) => {
-          res.send(itemHelpers.parseItemResults(response.data, responseDescription.data));
+          axios.get(`https://api.mercadolibre.com/categories/${response.data.category_id}`)
+          .then( (responseCategory) => {
+            res.send(itemHelpers.parseItemResults(response.data, responseDescription.data, responseCategory.data));
+          })
+          .catch( (error) => {
+            res.send(itemHelpers.parseItemResults(response.data, responseDescription.data, error));
+            console.log(error);
+          });
         })
         .catch( (error) => {
           res.send({error});

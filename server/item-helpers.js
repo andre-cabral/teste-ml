@@ -1,6 +1,6 @@
 const R = require('ramda');
 
-const parseItemResults = (itemResultData, descriptionResultData) => {
+const parseItemResults = (itemResultData, descriptionResultData, categoryResultData) => {
   return {
     author: {
       name: "String",
@@ -8,7 +8,8 @@ const parseItemResults = (itemResultData, descriptionResultData) => {
     },
     item: {
       ...parseResultItem(itemResultData),
-      description: R.pathOr('', ['plain_text'], descriptionResultData)
+      description: R.pathOr('', ['plain_text'], descriptionResultData),
+      categories: parseCategories(R.pathOr([], ['path_from_root'], categoryResultData)),
     }
   }
 };
@@ -29,5 +30,11 @@ const parseResultItem = (resultItemData) => {
     sold_quantity: R.pathOr(0, ['sold_quantity'], resultItemData)
 
   }
+}
+
+const parseCategories = (pathFromRoot) => {
+  return pathFromRoot.map((category) => {
+    return R.pathOr('', ['name'], category);
+  });
 }
 module.exports = { parseItemResults };

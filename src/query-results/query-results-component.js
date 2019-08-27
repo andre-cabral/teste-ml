@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getUrlParameter } from '../helpers/url-helper';
 import freeShippingImage from './images/free-shipping.png';
 import { addZeroOnDecimals } from '../helpers/currency';
+import CategoriesList from '../categories-list/categories-list-component';
 
 class QueryResults extends Component {
   componentDidMount(){
@@ -14,12 +15,7 @@ class QueryResults extends Component {
   
     return(
       <article className="results col-10">
-        <ul className="results__categories">
-          {categories.slice(0,4).map((category, index, usedArray) => {
-            const isLast = index === usedArray.length - 1;
-            return (<li key={`category-${category}`} className={`results__category-name${isLast ? ' results__category-name--last' : ''}`}>{category}{!isLast && <span className="results__category-divider">&nbsp;>&nbsp;</span>}</li>);
-          })}
-        </ul>
+        <CategoriesList categories={categories} maximum={4} />
         <ul className="results__items">
           {items.slice(0,4).map((product) => {
             const link = `/items/${product.id}`;
